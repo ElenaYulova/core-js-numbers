@@ -260,8 +260,13 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  if (!Number.isFinite(index)) return 'Wrong param(s)';
+  const fibArr = [0, 1];
+  for (let i = 2; i <= index; i += 1) {
+    fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
+  }
+  return fibArr[index];
 }
 
 /**
